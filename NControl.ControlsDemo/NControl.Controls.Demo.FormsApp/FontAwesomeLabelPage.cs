@@ -32,13 +32,25 @@ namespace NControl.Controls.Demo.FormsApp
                     HorizontalOptions = LayoutOptions.StartAndExpand,                    
 			    };
 
-				for (var col = 0; col < colCount; col++) {
+				for (var col = 0; col < colCount; col++)
+				{
+				    var innerStack = new StackLayout
+				    {
+				        Orientation = StackOrientation.Vertical
+
+				    };
 					var label = new FontAwesomeLabel
 					{
 					    Text = ((char) c++).ToString(),
                         HorizontalOptions = LayoutOptions.CenterAndExpand,
 					};
-                    colLayout.Children.Add(label);
+				    var subLabel = new Label
+				    {
+				        Text = c.ToString("X4")
+				    };
+                    innerStack.Children.Add(label);
+                    innerStack.Children.Add(subLabel);
+                    colLayout.Children.Add(innerStack);
 				}
                 rowLayout.Children.Add(colLayout);
 			}

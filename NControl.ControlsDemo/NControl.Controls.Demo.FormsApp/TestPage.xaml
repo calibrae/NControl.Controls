@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:NControl.Controls;assembly=NControl.Controls"
+             xmlns:formsApp="clr-namespace:NControl.Controls.Demo.FormsApp;assembly=NControl.Controls.Demo.FormsApp"
+             x:Class="NControl.Controls.Demo.FormsApp.TestPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:SvgImage SvgAssemblyType="{x:Type formsApp:TestPage}" SvgResource="NControl.Controls.Demo.FormsApp.Resources.Svg.Demo.svg" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

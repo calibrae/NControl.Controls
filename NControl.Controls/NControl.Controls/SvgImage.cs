@@ -40,10 +40,10 @@ namespace NControl.Controls
 		/// </summary>
 		public static BindableProperty SvgResourceProperty = 
 			BindableProperty.Create(nameof(SvgResource), typeof(string), typeof(SvgImage), null,
-				defaultBindingMode: Xamarin.Forms.BindingMode.TwoWay,
 				propertyChanged: (bindable, oldValue, newValue) => {
 					var ctrl = (SvgImage)bindable;
-					ctrl.SvgResource = (string)newValue;
+					ctrl.UpdateSvg();
+                    ctrl.Invalidate();
 				});
 
 		/// <summary>
@@ -51,15 +51,8 @@ namespace NControl.Controls
 		/// </summary>
 		/// <value>The name of the resource.</value>
 		public string SvgResource {
-			get{ return (string)GetValue (SvgResourceProperty); }
-			set {
-				if (value == SvgResource)
-					return;
-				
-				SetValue (SvgResourceProperty, value);
-				UpdateSvg ();
-				Invalidate ();
-			}
+			get => (string)GetValue (SvgResourceProperty);
+		    set => SetValue (SvgResourceProperty, value);
 		}
 
 		/// <summary>
@@ -67,10 +60,10 @@ namespace NControl.Controls
 		/// </summary>
 		public static BindableProperty SvgAssemblyProperty = 
 			BindableProperty.Create(nameof(SvgAssembly), typeof(Assembly), typeof(SvgImage), null,
-				defaultBindingMode: BindingMode.TwoWay,
 				propertyChanged: (bindable, oldValue, newValue) => {
 					var ctrl = (SvgImage)bindable;
-					ctrl.SvgAssembly = (Assembly)newValue;
+					ctrl.UpdateSvg();
+                    ctrl.Invalidate();
 				});
 
 		/// <summary>
@@ -78,15 +71,8 @@ namespace NControl.Controls
 		/// </summary>
 		/// <value>The color of the buton.</value>
 		public Assembly SvgAssembly {
-			get{ return (Assembly)GetValue (SvgAssemblyProperty); }
-			set {
-				if (value == SvgAssembly)
-					return;
-				
-				SetValue (SvgAssemblyProperty, value);
-				UpdateSvg ();
-				Invalidate ();
-			}
+			get => (Assembly)GetValue (SvgAssemblyProperty);
+		    set => SetValue (SvgAssemblyProperty, value);
 		}
 
 		/// <summary>
@@ -94,10 +80,10 @@ namespace NControl.Controls
 		/// </summary>
 		public static BindableProperty SvgAssemblyTypeProperty = 
 			BindableProperty.Create(nameof(SvgAssemblyType), typeof(Type), typeof(SvgImage), null,
-				defaultBindingMode: BindingMode.TwoWay,
 				propertyChanged: (bindable, oldValue, newValue) => {
 					var ctrl = (SvgImage)bindable;
-					ctrl.SvgAssemblyType = (Type)newValue;
+					ctrl.UpdateSvg();
+                    ctrl.Invalidate();
 		});
 
 		/// <summary>
@@ -106,15 +92,8 @@ namespace NControl.Controls
 		/// </summary>
 		/// <value>The color of the buton.</value>
 		public Type SvgAssemblyType {
-			get{ return (Type)GetValue (SvgAssemblyTypeProperty); }
-			set {
-				if (value == SvgAssemblyType)
-					return;
-				
-				SetValue (SvgAssemblyTypeProperty, value);
-				UpdateSvg ();
-				Invalidate ();
-			}
+			get => (Type)GetValue (SvgAssemblyTypeProperty);
+		    set => SetValue (SvgAssemblyTypeProperty, value);
 		}
 		#endregion
 

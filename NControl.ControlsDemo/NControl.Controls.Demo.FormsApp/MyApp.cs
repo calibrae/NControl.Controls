@@ -12,6 +12,7 @@ namespace NControl.Controls.Demo.FormsApp
 		public MyApp ()
 		{
 			var demoPageList = new ContentPage[] {
+                new TestPage(),
 				new CustomFontPage(),
 				new MaterialDesignIconsPage(),
 				new FontAwesomeLabelPage(),
